@@ -1,0 +1,274 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New";
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+  background-color: #f7f6fa;
+}
+
+.range {
+  width: 95vmin;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 60px;
+  -webkit-box-shadow: 0 2px 5px 0 #dadae5;
+          box-shadow: 0 2px 5px 0 #dadae5;
+}
+
+.range .singleRange__value {
+  position: relative;
+  width: 100%;
+}
+
+.range .singleRange__value span {
+  position: absolute;
+  height: 45px;
+  width: 45px;
+  color: #fff;
+  font-weight: 500;
+  line-height: 55px;
+  z-index: 2px;
+  text-align: center;
+  -webkit-transform: translateX(-50%) scale(0);
+          transform: translateX(-50%) scale(0);
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  top: -70px;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+
+.range .singleRange__value span.show {
+  -webkit-transform: translateX(-50%) scale(1);
+          transform: translateX(-50%) scale(1);
+}
+
+.range .singleRange__value span::after {
+  content: "";
+  position: absolute;
+  height: 45px;
+  width: 45px;
+  left: 50%;
+  -webkit-transform: translateX(-50%) rotate(45deg);
+          transform: translateX(-50%) rotate(45deg);
+  background-color: #3416b6;
+  z-index: -1;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+
+.range .singleRange__field {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.range .singleRange__field__value {
+  position: absolute;
+  font-size: 18px;
+  font-weight: 600;
+  color: #3416b6;
+}
+
+.range .singleRange__field__value.left {
+  left: -22px;
+}
+
+.range .singleRange__field__value.right {
+  right: -43px;
+}
+
+.range .singleRange__field input[type="range"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 2px;
+  background-color: #dadae5;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+}
+
+.range .singleRange__field input[type="range"]::-webkit-slider-thumb {
+  width: 20px;
+  height: 20px;
+  background-color: #3416b6;
+  cursor: pointer;
+  border-radius: 50%;
+  pointer-events: auto;
+  -webkit-box-shadow: 0 3px 5px 1px #bac0df;
+          box-shadow: 0 3px 5px 1px #bac0df;
+  -webkit-appearance: none;
+}
+
+.range .singleRange__field input[type="range"]:active::-webkit-slider-thumb {
+  background-color: #fff;
+  border: 3px solid #3416b6;
+}
+
+.range .doubleRange {
+  margin-top: 30px;
+}
+
+.range .doubleRange__value {
+  background-color: #3416b6;
+  width: 23%;
+  position: relative;
+  padding: 10px 0;
+  border-radius: 5px;
+  font-weight: 500;
+  text-align: center;
+  color: #fff;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+
+.range .doubleRange__value.show {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.range .doubleRange__value::before {
+  content: '';
+  position: absolute;
+  border-top: 15px solid #3416b6;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  width: 0;
+  height: 0;
+  right: 0;
+  bottom: -5px;
+  margin: auto;
+}
+
+.range .doubleRange__field {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+  margin-top: 30px;
+}
+
+.range .doubleRange__field__value {
+  position: absolute;
+  font-size: 18px;
+  font-weight: 600;
+  color: #3416b6;
+}
+
+.range .doubleRange__field__value.left {
+  left: -22px;
+}
+
+.range .doubleRange__field__value.right {
+  right: -43px;
+}
+
+.range .doubleRange__field input[type="range"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  pointer-events: none;
+  margin: auto;
+}
+
+.range .doubleRange__field input[type="range"]::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  height: 2px;
+}
+
+.range .doubleRange__field input[type="range"]::-moz-range-track {
+  -webkit-appearance: none;
+  height: 2px;
+}
+
+.range .doubleRange__field input[type="range"]::-ms-track {
+  -webkit-appearance: none;
+  height: 2px;
+}
+
+.range .doubleRange__field input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  margin-top: -9px;
+  width: 20px;
+  height: 20px;
+  background-color: #3416b6;
+  cursor: pointer;
+  border-radius: 50%;
+  pointer-events: auto;
+  -webkit-box-shadow: 0 3px 5px 1px #bac0df;
+          box-shadow: 0 3px 5px 1px #bac0df;
+}
+
+.range .doubleRange__field input[type="range"]::-ms-thumb {
+  -webkit-appearance: none;
+  margin-top: -9px;
+  width: 20px;
+  height: 20px;
+  background-color: #3416b6;
+  cursor: pointer;
+  border-radius: 50%;
+  pointer-events: auto;
+  box-shadow: 0 3px 5px 1px #bac0df;
+}
+
+.range .doubleRange__field input[type="range"]:active::-webkit-slider-thumb {
+  background-color: #fff;
+  border: 3px solid #3416b6;
+}
+
+.range .doubleRange__field .slider-track {
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  background-color: #dadae5;
+  border-radius: 5px;
+  margin: auto;
+}
+/*# sourceMappingURL=index.css.map */

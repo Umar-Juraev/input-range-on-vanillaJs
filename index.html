@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <title>dynamically costomized input-range</title>
+  </head>
+  <body>
+    <section class="range">
+      <div class="singleRange">
+        <div class="singleRange__value">
+          <span id="single-value">100</span>
+        </div>
+        <div class="singleRange__field">
+          <div class="singleRange__field__value left">0</div>
+          <input
+            oninput="singleRange() "
+            onblur="onBlur()"
+            id="single-input"
+            type="range"
+            value="100"
+            min="0"
+            max="200"
+            step="1"
+          />
+          <div class="singleRange__field__value right">200</div>
+        </div>
+      </div>
+
+      <div class="doubleRange">
+        <div class="doubleRange__value">
+          <span id="double-value-1">0</span>
+          <span>&dash;</span>
+          <span id="double-value-2">100</span>
+        </div>
+        <div class="doubleRange__field">
+          <div class="slider-track"></div>
+          <div class="doubleRange__field__value left">0</div>
+          <input
+            type="range"
+            oninput="doubleRangeFirst() "
+            onblur="onBlur()"
+            id="doubleInput-1"
+            min="0"
+            max="800"
+            value="0"
+            step="1"
+          />
+          <input
+            type="range"
+            oninput="doubleRangeSecond()"
+            onblur="onBlur()"
+            id="doubleInput-2"
+            min="0"
+            max="800"
+            value="400"
+            step="1"
+          />
+          <div class="doubleRange__field__value right">800</div>
+        </div>
+      </div>
+    </section>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
